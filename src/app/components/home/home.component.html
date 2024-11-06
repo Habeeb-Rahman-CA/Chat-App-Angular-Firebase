@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="chat-list shadow">
+        <form class="d-flex justify-content-center">
+            <input class="form-control my-3 w-75" placeholder="Search for Users..." list="users" [formControl]="searchControl">
+            <datalist id="users">
+                @for (user of users$ |async; track $index) {
+                    <option value="{{user?.displayName}}">
+                }
+            </datalist>
+        </form>
+    </div>
+    <div class="messages shadow"></div>
+</div>
